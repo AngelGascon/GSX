@@ -1,9 +1,7 @@
 #!/bin/bash
-
-#Abans de començar es important fer un sudo update per tenir els packages actualitzats
-
-# Get the current date and time
-date=$(date +"%Y-%m-%d %T")
+# Àngel Gascón Muria, 16/02/2023, V1
+# Accepta un nombre indeterminat de paràmetres, aquests seràn els noms de paquets a cercar si estan instal·lats i si tenen actualitzacions o no.
+# Abans d'executar es important fer un sudo update per a que el sistema pugui saber si hi ha packages per actualitzar.
 
 # Check if package names are provided by the user
 if [ -z $1 ]; then
