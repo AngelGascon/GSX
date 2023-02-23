@@ -1,0 +1,4 @@
+tar compress/decompress:
+
+tar -czvf example_dir.tgz example_dir
+tar -xzvf archive_name.tgz
