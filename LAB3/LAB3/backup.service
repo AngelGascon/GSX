@@ -1,0 +1,13 @@
+# Àngel Gascón Muria
+# path absolut: /etc/systemd/system/backup.service
+# permisos 644
+# usuari:root, group: root
+[Unit]
+Description=Example systemd service.
+
+[Service]
+Type=simple
+ExecStart=cgexec -g memory,cpu:servidors /usr/bin/myback
+
+[Install]
+WantedBy=multi-user.target
