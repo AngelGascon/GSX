@@ -1,0 +1,64 @@
+divendres, 31 de març de 2023, 18:31:41 UTC
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2023-03-22 06:31 UTC
+Nmap scan report for 203.0.113.34
+Host is up (0.00013s latency).
+
+PORT   STATE SERVICE
+80/tcp open  http
+MAC Address: 02:42:CB:00:71:22 (Unknown)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: Linux 2.6.32 (96%), Linux 3.2 - 4.9 (96%), Linux 2.6.32 - 3.10 (96%), Linux 3.4 - 3.10 (95%), Linux 3.1 (95%), Linux 3.2 (95%), AXIS 210A or 211 Network Camera (Linux 2.6.17) (94%), Synology DiskStation Manager 5.2-5644 (94%), Netgear RAIDiator 4.2.28 (94%), Linux 2.6.32 - 2.6.35 (94%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 18.17 seconds
+
+*   Trying 203.0.113.34:80...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to 203.0.113.34 (203.0.113.34) port 80 (#0)
+> GET / HTTP/1.1
+> Host: 203.0.113.34
+> User-Agent: curl/7.74.0
+> Accept: */*
+> 
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Wed, 22 Mar 2023 06:32:00 GMT
+< Server: Apache/2.4.56 (Unix)
+< Last-Modified: Mon, 11 Jun 2007 18:53:14 GMT
+< ETag: "2d-432a5e4a73a80"
+< Accept-Ranges: bytes
+< Content-Length: 45
+< Content-Type: text/html
+< 
+{ [45 bytes data]
+100    45  100    45    0     0   9000      0 --:--:-- --:--:-- --:--:-- 11250
+* Connection #0 to host 203.0.113.34 left intact
+<html><body><h1>It works!</h1></body></html>
+
+*   Trying 203.0.113.34:80...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to 203.0.113.34 (203.0.113.34) port 80 (#0)
+> GET /welcome.html HTTP/1.1
+> Host: 203.0.113.34
+> User-Agent: curl/7.74.0
+> Accept: */*
+> 
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Wed, 22 Mar 2023 06:32:00 GMT
+< Server: Apache/2.4.56 (Unix)
+< Last-Modified: Thu, 09 Mar 2023 23:42:44 GMT
+< ETag: "d-5f6803382a500"
+< Accept-Ranges: bytes
+< Content-Length: 13
+< Content-Type: text/html
+< 
+{ [13 bytes data]
+100    13  100    13    0     0   4333      0 --:--:-- --:--:-- --:--:--  4333
+* Connection #0 to host 203.0.113.34 left intact
+Hello world!
