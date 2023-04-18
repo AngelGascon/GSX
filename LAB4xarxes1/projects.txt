@@ -1,0 +1,5 @@
+nom projecte:cap projecte:descripció projecte.
+Administracio:39456754D:Projecte per a facilitar l’administració de les aplicacions que utilitzen les empreses associades.
+Raspberry: 98765476F: Projecte dedicat a la implementació i distribució d’aplicacions per a la raspberry pi.
+Disseny:87903024T: Projecte dedicat al disseny de les aplicacions i plataformes.
+Marqueting:76863590P: Projecte on es realitza l’estudi de màrqueting per la venda i modificació de les aplicacions.
