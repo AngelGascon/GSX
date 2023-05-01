@@ -1,0 +1,179 @@
+dilluns, 1 de maig de 2023, 20:36:23 UTC
+HOSTNAME
+admin.gsx.int
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2023-05-01 20:36 UTC
+Nmap scan report for ns.gsx.int (192.168.58.1)
+Host is up (0.000076s latency).
+
+PORT   STATE SERVICE
+22/tcp open  ssh
+53/tcp open  domain
+MAC Address: 1A:45:4A:1F:BF:6F (Unknown)
+
+Nmap done: 1 IP address (1 host up) scanned in 5.77 seconds
+
+RESOLVCONF
+domain gsx.int
+search gsx.int. gsx.gei.
+nameserver 192.168.58.1
+nameserver 203.0.113.33
+nameserver 127.0.0.1
+
+lease {
+  interface "eth0";
+  fixed-address 192.168.58.126;
+  option subnet-mask 255.255.255.128;
+  option routers 192.168.58.1;
+  option dhcp-lease-time 464511323;
+  option dhcp-message-type 5;
+  option domain-name-servers 192.168.58.1,203.0.113.33,127.0.0.1;
+  option dhcp-server-identifier 192.168.58.1;
+  option domain-search "gsx.int.", "gsx.gei.";
+  option broadcast-address 192.168.58.127;
+  option domain-name "gsx.int";
+  renew 0 2029/05/06 20:37:23;
+  rebind 2 2036/03/18 02:22:09;
+  expire never;
+}
+HOSTS
+127.0.0.1	localhost
+::1		localhost ip6-localhost ip6-loopback
+ff02::1		ip6-allnodes
+ff02::2		ip6-allrouters
+
+PING ns.gsx.int (192.168.58.1) 56(84) bytes of data.
+
+--- ns.gsx.int ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.201/0.201/0.201/0.000 ms
+PING admin.gsx.int (192.168.58.126) 56(84) bytes of data.
+
+--- admin.gsx.int ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.014/0.014/0.014/0.000 ms
+PING ldap.gsx.gei (203.0.113.62) 56(84) bytes of data.
+
+--- ldap.gsx.gei ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.063/0.063/0.063/0.000 ms
+BOAXFR1
+
+; <<>> DiG 9.16.33-Debian <<>> AXFR gsx.gei
+;; global options: +cmd
+gsx.gei.		604800	IN	SOA	ns.gsx.gei. root.ns.gsx.gei. 1 604800 86400 2419200 604800
+gsx.gei.		604800	IN	NS	ns.gsx.gei.
+dhcp.gsx.gei.		604800	IN	CNAME	ns.gsx.gei.
+ldap.gsx.gei.		604800	IN	A	203.0.113.62
+mail.gsx.gei.		604800	IN	A	203.0.113.62
+ns.gsx.gei.		604800	IN	A	203.0.113.33
+ns.gsx.gei.		604800	IN	MX	10 mail.gsx.gei.
+pop.gsx.gei.		604800	IN	CNAME	mail.gsx.gei.
+router.gsx.gei.		604800	IN	CNAME	ns.gsx.gei.
+smtp.gsx.gei.		604800	IN	CNAME	mail.gsx.gei.
+www.gsx.gei.		604800	IN	CNAME	ldap.gsx.gei.
+gsx.gei.		604800	IN	SOA	ns.gsx.gei. root.ns.gsx.gei. 1 604800 86400 2419200 604800
+;; Query time: 4 msec
+;; SERVER: 192.168.58.1#53(192.168.58.1)
+;; WHEN: Mon May 01 20:36:29 UTC 2023
+;; XFR size: 12 records (messages 1, bytes 327)
+
+EOAXFR1
+
+BOAXFR2
+
+; <<>> DiG 9.16.37-Debian <<>> AXFR gsx.gei
+;; global options: +cmd
+gsx.gei.		604800	IN	SOA	ns.gsx.gei. root.ns.gsx.gei. 1 604800 86400 2419200 604800
+gsx.gei.		604800	IN	NS	ns.gsx.gei.
+dhcp.gsx.gei.		604800	IN	CNAME	ns.gsx.gei.
+ldap.gsx.gei.		604800	IN	A	203.0.113.62
+mail.gsx.gei.		604800	IN	A	203.0.113.62
+ns.gsx.gei.		604800	IN	A	203.0.113.33
+ns.gsx.gei.		604800	IN	MX	10 mail.gsx.gei.
+pop.gsx.gei.		604800	IN	CNAME	mail.gsx.gei.
+router.gsx.gei.		604800	IN	CNAME	ns.gsx.gei.
+smtp.gsx.gei.		604800	IN	CNAME	mail.gsx.gei.
+www.gsx.gei.		604800	IN	CNAME	ldap.gsx.gei.
+gsx.gei.		604800	IN	SOA	ns.gsx.gei. root.ns.gsx.gei. 1 604800 86400 2419200 604800
+;; Query time: 0 msec
+;; SERVER: 192.168.58.1#53(192.168.58.1)
+;; WHEN: Mon May 01 20:36:32 UTC 2023
+;; XFR size: 12 records (messages 1, bytes 327)
+
+
+; <<>> DiG 9.16.37-Debian <<>> AXFR 113.0.203.in-addr.arpa.
+;; global options: +cmd
+113.0.203.in-addr.arpa.	604800	IN	SOA	ns.gsx.gei. root.ns.gsx.gei. 1 604800 86400 2419200 604800
+113.0.203.in-addr.arpa.	604800	IN	NS	ns.gsx.gei.
+33.113.0.203.in-addr.arpa. 604800 IN	PTR	ns.gsx.gei.
+62.113.0.203.in-addr.arpa. 604800 IN	PTR	ldap.gsx.gei.
+62.113.0.203.in-addr.arpa. 604800 IN	PTR	mail.gsx.gei.
+113.0.203.in-addr.arpa.	604800	IN	SOA	ns.gsx.gei. root.ns.gsx.gei. 1 604800 86400 2419200 604800
+;; Query time: 4 msec
+;; SERVER: 192.168.58.1#53(192.168.58.1)
+;; WHEN: Mon May 01 20:36:32 UTC 2023
+;; XFR size: 6 records (messages 1, bytes 238)
+
+
+; <<>> DiG 9.16.37-Debian <<>> AXFR gsx.int
+;; global options: +cmd
+gsx.int.		604800	IN	SOA	ns.gsx.int. root.ns.gsx.int. 2 604800 86400 2419200 604800
+gsx.int.		604800	IN	NS	ns.gsx.int.
+admin.gsx.int.		604800	IN	A	192.168.58.126
+dhcp.gsx.int.		604800	IN	CNAME	ns.gsx.int.
+ns.gsx.int.		604800	IN	A	192.168.58.1
+pc1.gsx.int.		604800	IN	A	192.168.58.2
+pc10.gsx.int.		604800	IN	A	192.168.58.11
+pc11.gsx.int.		604800	IN	A	192.168.58.12
+pc12.gsx.int.		604800	IN	A	192.168.58.13
+pc13.gsx.int.		604800	IN	A	192.168.58.14
+pc14.gsx.int.		604800	IN	A	192.168.58.15
+pc15.gsx.int.		604800	IN	A	192.168.58.16
+pc2.gsx.int.		604800	IN	A	192.168.58.3
+pc3.gsx.int.		604800	IN	A	192.168.58.4
+pc4.gsx.int.		604800	IN	A	192.168.58.5
+pc5.gsx.int.		604800	IN	A	192.168.58.6
+pc6.gsx.int.		604800	IN	A	192.168.58.7
+pc7.gsx.int.		604800	IN	A	192.168.58.8
+pc8.gsx.int.		604800	IN	A	192.168.58.9
+pc9.gsx.int.		604800	IN	A	192.168.58.10
+router.gsx.int.		604800	IN	CNAME	ns.gsx.int.
+gsx.int.		604800	IN	SOA	ns.gsx.int. root.ns.gsx.int. 2 604800 86400 2419200 604800
+;; Query time: 0 msec
+;; SERVER: 192.168.58.1#53(192.168.58.1)
+;; WHEN: Mon May 01 20:36:32 UTC 2023
+;; XFR size: 22 records (messages 1, bytes 542)
+
+
+; <<>> DiG 9.16.37-Debian <<>> AXFR 168.192.in-addr.arpa.
+;; global options: +cmd
+168.192.in-addr.arpa.	604800	IN	SOA	ns.gsx.int. root.ns.gsx.int. 1 604800 86400 2419200 604800
+168.192.in-addr.arpa.	604800	IN	NS	ns.gsx.int.
+1.58.168.192.in-addr.arpa. 604800 IN	PTR	ns.gsx.int.
+10.58.168.192.in-addr.arpa. 604800 IN	PTR	pc9.gsx.int.
+11.58.168.192.in-addr.arpa. 604800 IN	PTR	pc10.gsx.int.
+12.58.168.192.in-addr.arpa. 604800 IN	PTR	pc11.gsx.int.
+126.58.168.192.in-addr.arpa. 604800 IN	PTR	admin.gsx.int.
+13.58.168.192.in-addr.arpa. 604800 IN	PTR	pc12.gsx.int.
+14.58.168.192.in-addr.arpa. 604800 IN	PTR	pc13.gsx.int.
+15.58.168.192.in-addr.arpa. 604800 IN	PTR	pc14.gsx.int.
+16.58.168.192.in-addr.arpa. 604800 IN	PTR	pc15.gsx.int.
+2.58.168.192.in-addr.arpa. 604800 IN	PTR	pc1.gsx.int.
+3.58.168.192.in-addr.arpa. 604800 IN	PTR	pc2.gsx.int.
+4.58.168.192.in-addr.arpa. 604800 IN	PTR	pc3.gsx.int.
+5.58.168.192.in-addr.arpa. 604800 IN	PTR	pc4.gsx.int.
+6.58.168.192.in-addr.arpa. 604800 IN	PTR	pc5.gsx.int.
+7.58.168.192.in-addr.arpa. 604800 IN	PTR	pc6.gsx.int.
+8.58.168.192.in-addr.arpa. 604800 IN	PTR	pc7.gsx.int.
+9.58.168.192.in-addr.arpa. 604800 IN	PTR	pc8.gsx.int.
+168.192.in-addr.arpa.	604800	IN	SOA	ns.gsx.int. root.ns.gsx.int. 1 604800 86400 2419200 604800
+;; Query time: 0 msec
+;; SERVER: 192.168.58.1#53(192.168.58.1)
+;; WHEN: Mon May 01 20:36:32 UTC 2023
+;; XFR size: 20 records (messages 1, bytes 554)
+
+EOAXFR2
+
+HOSTINET
+;; connection timed out; no servers could be reached
