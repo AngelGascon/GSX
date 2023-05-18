@@ -1,0 +1,34 @@
+divendres, 5 de maig de 2023, 19:02:07 UTC
+
+192.168.58.1 = 192.168.58.1
+
+PING 192.168.58.1 (192.168.58.1) 56(84) bytes of data.
+
+--- 192.168.58.1 ping statistics ---
+11 packets transmitted, 11 received, 0% packet loss, time 10239ms
+rtt min/avg/max/mdev = 0.071/0.204/0.477/0.140 ms
+
+State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess                           
+UNCONN 0      0            0.0.0.0:68        0.0.0.0:*    users:(("dhclient",pid=118,fd=9))
+UNCONN 0      0            0.0.0.0:161       0.0.0.0:*    users:(("snmpd",pid=230,fd=6))   
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2023-05-05 19:02 UTC
+Nmap scan report for router (203.0.113.33)
+Host is up (0.00058s latency).
+
+PORT    STATE SERVICE
+161/udp open  snmp
+
+Nmap done: 1 IP address (1 host up) scanned in 0.26 seconds
+
+LOCALHOST
+./genera_sortida_labx6.sh: 49: ./proves_snmp.sh: not found
+
+ROUTER
+./genera_sortida_labx6.sh: 53: ./proves_snmp.sh: not found
+
+SERVER
+./genera_sortida_labx6.sh: 57: ./proves_snmp.sh: not found
+
+CRONTAB
+JOURNAL

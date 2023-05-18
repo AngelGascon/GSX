@@ -71,7 +71,6 @@ echo '$TTL    604800
 ns      IN      A       192.168.58.1
 dhcp    IN      CNAME   ns
 router  IN      CNAME   ns
-admin   IN      A       192.168.58.126
 pc1     IN      A       192.168.58.2
 pc2     IN      A       192.168.58.3
 pc3     IN      A       192.168.58.4
@@ -86,7 +85,8 @@ pc11    IN      A       192.168.58.12
 pc12    IN      A       192.168.58.13
 pc13    IN      A       192.168.58.14
 pc14    IN      A       192.168.58.15
-pc15    IN      A       192.168.58.16' >> /etc/bind/db.gsx.int
+pc15    IN      A       192.168.58.16
+admin   IN      A       192.168.58.126' >> /etc/bind/db.gsx.int
 
 touch /etc/bind/db.203.0.113
 truncate -s 0 /etc/bind/db.203.0.113
@@ -146,7 +146,8 @@ echo 'options {
 	directory "/var/cache/bind";
 	forwarders {
 		127.0.0.1;
-		192.168.58.1;		
+		192.168.58.1;
+        '"$ISP_READ"'
 	};
 	dnssec-validation no;
 	recursion yes;
@@ -156,8 +157,8 @@ echo 'options {
 	};
 	allow-transfer {
 		127.0.0.1;
-		192.168.58.126;
         192.168.58.1;
+        192.168.58.126;
 	};
 	listen-on-v6 { none; };
 	listen-on {
@@ -220,13 +221,13 @@ subnet 203.0.113.32 netmask 255.255.255.224{
 		option domain-name "gsx.gei";
 } 
 host server { 
-        hardware ethernet 36:a0:46:90:cd:6b; 
+        hardware ethernet 0e:84:ad:a8:24:14; 
         fixed-address 203.0.113.62; 
         max-lease-time -1; 
         default-lease-time -1; 
 } 
 host admin { 
-        hardware ethernet 32:6f:49:d5:b7:db; 
+        hardware ethernet 22:bb:ab:c0:0f:3f; 
         fixed-address 192.168.58.126; 
         max-lease-time -1; 
         default-lease-time -1; 
@@ -235,6 +236,8 @@ host admin {
 sleep 5s
 
 systemctl restart isc-dhcp-server
+
+sleep 5s
 
 ifdown eth0
 ifup eth0

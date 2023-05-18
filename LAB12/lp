@@ -1,0 +1,17 @@
+#!/bin/bash
+#permissos: 755
+#path: /usr/local/bin/lp
+
+# Demana la paraula clau
+echo "Introdueix la paraula clau:"
+stty -echo
+read password
+stty echo
+# Comprova la paraula clau
+if [ "$password" != "paraulaclau" ]; then
+    echo "Error: la paraula clau introduïda no és correcta."
+    exit 0
+fi
+# Si la paraula clau és correcta, executa lp estàndard
+command /usr/bin/lp "$@"
+exit 1
